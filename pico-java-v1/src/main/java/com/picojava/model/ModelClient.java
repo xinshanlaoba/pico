@@ -9,6 +9,14 @@ public interface ModelClient {
         return ModelResponse.text(complete(prompt, maxNewTokens));
     }
 
+    default ModelResponse completeResponse(ModelRequest request) throws IOException, InterruptedException {
+        return completeResponse(request.prompt(), request.maxNewTokens());
+    }
+
+    default boolean supportsNativeToolCalling() {
+        return false;
+    }
+
     String providerName();
 
     String modelName();

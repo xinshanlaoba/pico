@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.picojava.agent.ContextManagerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.529 s -- in com.picojava.agent.ContextManagerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.266 s -- in com.picojava.agent.ContextManagerTest

@@ -11,19 +11,27 @@ public final class PromptBuilder {
 
     public static String buildPrefix(Pico pico) {
         StringBuilder sb = new StringBuilder();
-        sb.append("你是 pico，一个在本地仓库中工作的编程 agent。\n");
-        sb.append("你每轮必须输出一个工具调用，或者输出一个最终答案。\n");
-        sb.append("工具调用可以使用 JSON 格式，例如 <tool>{\"name\":...,\"args\":{...}}</tool>。\n");
-        sb.append("对于多行 write_file 或 patch_file 内容，可以使用 XML 风格，例如 <tool name=\"write_file\" path=\"a.txt\"><content>...</content></tool>。\n");
-        sb.append("对于有边界的调查任务，可以使用 delegate 请求子 agent 返回摘要。\n");
-        sb.append("最终答案必须使用 <final>...</final>。\n");
-        sb.append("回答要具体。在对仓库状态做强判断之前，应先使用工具确认。\n\n");
-        sb.append("审批策略：").append(pico.approvalPolicy()).append("\n");
-        sb.append("可用工具：\n");
+        sb.append("You are pico, a coding agent operating inside a local repository.\n");
+        sb.append("On each turn, either make exactly one tool call or provide a final answer.\n");
+        if (pico.modelClient().supportsNativeToolCalling()) {
+            sb.append("When tool definitions are attached, prefer native tool calling over textual <tool> blocks.\n");
+            sb.append("If native tool calling is unavailable, you may fall back to <tool>{\"name\":...,\"args\":{...}}</tool>.\n");
+        } else {
+            sb.append("Tool calls may be returned as <tool>{\"name\":...,\"args\":{...}}</tool>.\n");
+        }
+        sb.append("For multi-line write_file or patch_file content, you may use XML style tool calls such as ");
+        sb.append("<tool name=\"write_file\" path=\"a.txt\"><content>...</content></tool>.\n");
+        sb.append("Use delegate only for bounded side investigations and return a concise summary.\n");
+        sb.append("Final answers should use <final>...</final> whenever possible.\n");
+        sb.append("Be concrete. Verify repository state with tools before making strong claims.\n\n");
+        sb.append("Approval policy: ").append(pico.approvalPolicy()).append('\n');
+        sb.append("Available tools:\n");
         for (Tool tool : pico.toolsForPrompt()) {
-            sb.append("- ").append(tool.name()).append(" ").append(tool.schema())
-              .append(" 高风险=").append(tool.risky())
-              .append(" : ").append(tool.description()).append("\n");
+            sb.append("- ").append(tool.name()).append(' ')
+                    .append(tool.schema())
+                    .append(" risky=").append(tool.risky())
+                    .append(" : ").append(tool.description())
+                    .append('\n');
         }
         return sb.toString().trim();
     }

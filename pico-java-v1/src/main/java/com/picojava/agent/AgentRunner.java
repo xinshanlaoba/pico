@@ -1,6 +1,7 @@
 package com.picojava.agent;
 
 import com.picojava.common.TextUtils;
+import com.picojava.model.ModelRequest;
 import com.picojava.model.ModelResponse;
 import com.picojava.run.ReportWriter;
 import com.picojava.run.TaskState;
@@ -134,7 +135,8 @@ final class AgentRunner {
 
         ModelTurn turn;
         try {
-            ModelResponse response = pico.modelClient().completeResponse(prompt, pico.maxNewTokens());
+            ModelRequest request = ModelRequest.withTools(prompt, pico.maxNewTokens(), pico.toolsForPrompt());
+            ModelResponse response = pico.modelClient().completeResponse(request);
             String modelText = response.textContent();
             pico.appendHistory("assistant_raw", modelText);
             turn = ResponseParser.parse(modelText);
