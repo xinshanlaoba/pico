@@ -46,6 +46,7 @@ com\picojava\tool\package-info.class
 com\picojava\model\OllamaModelClient.class
 com\picojava\model\AnthropicCompatibleModelClient$Message.class
 com\picojava\run\RunStore.class
+com\picojava\model\ModelToolDefinition.class
 com\picojava\model\OpenAiCompatibleModelClient$ResponsesResponse.class
 com\picojava\agent\ContextManager$HistorySection.class
 com\picojava\run\ReportWriter.class
@@ -88,6 +89,7 @@ com\picojava\tool\impl\ReadFileTool.class
 com\picojava\tool\Tool.class
 com\picojava\PicoApplication.class
 com\picojava\session\SessionException.class
+com\picojava\model\SpringAiOpenAiModelClient.class
 com\picojava\cli\PicoCommand.class
 com\picojava\memory\MemorySummarizer.class
 com\picojava\model\ModelClientFactory.class

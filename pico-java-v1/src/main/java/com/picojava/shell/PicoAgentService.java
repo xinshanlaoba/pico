@@ -10,6 +10,7 @@ import com.picojava.model.ModelClientConfig;
 import com.picojava.model.ModelClientFactory;
 import com.picojava.session.SessionStore;
 import com.picojava.workspace.WorkspaceContext;
+import io.micrometer.observation.ObservationRegistry;
 import org.springframework.stereotype.Service;
 
 import java.nio.file.Path;
@@ -26,15 +27,18 @@ public class PicoAgentService {
     private final ModelProperties modelProperties;
     private final SessionProperties sessionProperties;
     private final ShellSessionState shellSessionState;
+    private final ObservationRegistry observationRegistry;
 
     public PicoAgentService(AgentProperties agentProperties,
                             ModelProperties modelProperties,
                             SessionProperties sessionProperties,
-                            ShellSessionState shellSessionState) {
+                            ShellSessionState shellSessionState,
+                            ObservationRegistry observationRegistry) {
         this.agentProperties = agentProperties;
         this.modelProperties = modelProperties;
         this.sessionProperties = sessionProperties;
         this.shellSessionState = shellSessionState;
+        this.observationRegistry = observationRegistry;
     }
 
     public synchronized String ask(AgentExecutionRequest request) throws Exception {
@@ -137,7 +141,7 @@ public class PicoAgentService {
                 request.getTopP() != null ? request.getTopP() : modelProperties.getTopP(),
                 System.getenv()
         );
-        return ModelClientFactory.create(config);
+        return ModelClientFactory.create(config, observationRegistry);
     }
 
     private Path resolveSessionRoot(WorkspaceContext workspace) {

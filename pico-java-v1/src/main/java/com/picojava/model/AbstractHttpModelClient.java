@@ -74,7 +74,8 @@ public abstract class AbstractHttpModelClient implements ModelClient {
                 .header("Accept", "application/json");
     }
 
-    protected ModelResponse completeResponse(ModelRequest request) throws IOException, InterruptedException {
+    @Override
+    public ModelResponse completeResponse(ModelRequest request) throws IOException, InterruptedException {
         IOException lastFailure = null;
         for (int attempt = 0; attempt <= maxRetries; attempt++) {
             try {
