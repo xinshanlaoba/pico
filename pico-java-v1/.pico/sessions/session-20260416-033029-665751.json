@@ -1,0 +1,39 @@
+{
+  "schemaVersion" : 1,
+  "sessionType" : "pico-java-session",
+  "id" : "session-20260416-033029-665751",
+  "workspaceRoot" : "C:\\Users\\欣山老八\\Desktop\\Code\\picojava\\pico-java-v1",
+  "createdAt" : "2026-04-16T03:30:29.263678500Z",
+  "updatedAt" : "2026-04-16T03:30:30.294575700Z",
+  "history" : [ {
+    "role" : "user",
+    "content" : "test"
+  } ],
+  "distilledMemory" : "",
+  "memoryState" : {
+    "taskSummary" : "test",
+    "summaryMemory" : "",
+    "recentFiles" : [ ],
+    "recentToolResults" : [ ],
+    "extensions" : { }
+  },
+  "runtimeConfig" : {
+    "approvalPolicy" : "ask",
+    "maxSteps" : 8,
+    "maxNewTokens" : 1800,
+    "secretEnvNames" : [ "ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN", "GH_PAT", "GITHUB_PAT", "OPENAI_API_KEY", "OPENAI_API_TOKEN", "RIGHT_CODES_API_KEY" ],
+    "providerName" : "openai",
+    "modelName" : "dummy"
+  },
+  "latestRunId" : "run-20260416-033029-386f4a",
+  "recentRuns" : [ {
+    "runId" : "run-20260416-033029-386f4a",
+    "taskId" : "task-20260416-033029-ebd840",
+    "startedAt" : "2026-04-16T03:30:29.571076300Z",
+    "endedAt" : "2026-04-16T03:30:30.271968800Z",
+    "status" : "failed",
+    "stopReason" : "error",
+    "finalAnswer" : "",
+    "error" : "ModelClientException: openai 请求失败："
+  } ]
+}

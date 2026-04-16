@@ -1,0 +1,30 @@
+spring:
+  main:
+    web-application-type: none
+  application:
+    name: pico-java
+  shell:
+    interactive:
+      enabled: true
+    noninteractive:
+      enabled: true
+
+pico:
+  agent:
+    cwd: .
+    approval: ask
+    max-steps: 8
+    max-new-tokens: 1800
+  model:
+    provider: openai
+    timeout: 300s
+    temperature: 0.2
+    top-p: 0.95
+  session:
+    directory: .pico/sessions
+  shell:
+    prompt: "pico-java:>"
+
+logging:
+  level:
+    org.jline: ERROR

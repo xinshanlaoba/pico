@@ -1,0 +1,120 @@
+{
+  "groups": [
+    {
+      "name": "pico.agent",
+      "type": "com.picojava.config.AgentProperties",
+      "sourceType": "com.picojava.config.AgentProperties"
+    },
+    {
+      "name": "pico.model",
+      "type": "com.picojava.config.ModelProperties",
+      "sourceType": "com.picojava.config.ModelProperties"
+    },
+    {
+      "name": "pico.session",
+      "type": "com.picojava.config.SessionProperties",
+      "sourceType": "com.picojava.config.SessionProperties"
+    },
+    {
+      "name": "pico.shell",
+      "type": "com.picojava.config.ShellProperties",
+      "sourceType": "com.picojava.config.ShellProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "pico.agent.approval",
+      "type": "java.lang.String",
+      "sourceType": "com.picojava.config.AgentProperties",
+      "defaultValue": "ask"
+    },
+    {
+      "name": "pico.agent.cwd",
+      "type": "java.lang.String",
+      "sourceType": "com.picojava.config.AgentProperties",
+      "defaultValue": "."
+    },
+    {
+      "name": "pico.agent.max-new-tokens",
+      "type": "java.lang.Integer",
+      "sourceType": "com.picojava.config.AgentProperties",
+      "defaultValue": 1800
+    },
+    {
+      "name": "pico.agent.max-steps",
+      "type": "java.lang.Integer",
+      "sourceType": "com.picojava.config.AgentProperties",
+      "defaultValue": 8
+    },
+    {
+      "name": "pico.agent.secret-env-names",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.picojava.config.AgentProperties"
+    },
+    {
+      "name": "pico.model.api-key",
+      "type": "java.lang.String",
+      "sourceType": "com.picojava.config.ModelProperties"
+    },
+    {
+      "name": "pico.model.base-url",
+      "type": "java.lang.String",
+      "sourceType": "com.picojava.config.ModelProperties"
+    },
+    {
+      "name": "pico.model.host",
+      "type": "java.lang.String",
+      "sourceType": "com.picojava.config.ModelProperties"
+    },
+    {
+      "name": "pico.model.model",
+      "type": "java.lang.String",
+      "sourceType": "com.picojava.config.ModelProperties"
+    },
+    {
+      "name": "pico.model.provider",
+      "type": "java.lang.String",
+      "sourceType": "com.picojava.config.ModelProperties",
+      "defaultValue": "openai"
+    },
+    {
+      "name": "pico.model.temperature",
+      "type": "java.lang.Double",
+      "sourceType": "com.picojava.config.ModelProperties",
+      "defaultValue": 0.2
+    },
+    {
+      "name": "pico.model.timeout",
+      "type": "java.time.Duration",
+      "sourceType": "com.picojava.config.ModelProperties",
+      "defaultValue": "300s"
+    },
+    {
+      "name": "pico.model.top-p",
+      "type": "java.lang.Double",
+      "sourceType": "com.picojava.config.ModelProperties",
+      "defaultValue": 0.95
+    },
+    {
+      "name": "pico.session.directory",
+      "type": "java.lang.String",
+      "sourceType": "com.picojava.config.SessionProperties",
+      "defaultValue": ".pico\/sessions"
+    },
+    {
+      "name": "pico.session.resume",
+      "type": "java.lang.String",
+      "sourceType": "com.picojava.config.SessionProperties"
+    },
+    {
+      "name": "pico.shell.prompt",
+      "type": "java.lang.String",
+      "sourceType": "com.picojava.config.ShellProperties",
+      "defaultValue": "pico-java:>"
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

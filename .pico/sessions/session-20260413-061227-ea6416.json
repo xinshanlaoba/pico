@@ -1,0 +1,27 @@
+{
+  "schemaVersion" : 1,
+  "sessionType" : "pico-java-session",
+  "id" : "session-20260413-061227-ea6416",
+  "workspaceRoot" : "C:\\Users\\欣山老八\\Desktop\\Code\\picojava",
+  "createdAt" : "2026-04-13T06:12:27.021612100Z",
+  "updatedAt" : "2026-04-13T06:12:27.232249400Z",
+  "history" : [ ],
+  "distilledMemory" : "",
+  "memoryState" : {
+    "taskSummary" : "",
+    "summaryMemory" : "",
+    "recentFiles" : [ ],
+    "recentToolResults" : [ ],
+    "extensions" : { }
+  },
+  "runtimeConfig" : {
+    "approvalPolicy" : "ask",
+    "maxSteps" : 8,
+    "maxNewTokens" : 1800,
+    "secretEnvNames" : [ "ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN", "GH_PAT", "GITHUB_PAT", "OPENAI_API_KEY", "OPENAI_API_TOKEN", "RIGHT_CODES_API_KEY" ],
+    "providerName" : "openai",
+    "modelName" : "gpt-5.4"
+  },
+  "latestRunId" : "",
+  "recentRuns" : [ ]
+}

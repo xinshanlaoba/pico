@@ -1,0 +1,39 @@
+{
+  "schemaVersion" : 1,
+  "sessionType" : "pico-java-session",
+  "id" : "session-20260413-055530-1bf930",
+  "workspaceRoot" : "C:\\Users\\欣山老八\\Desktop\\Code\\picojava",
+  "createdAt" : "2026-04-13T05:55:30.096131500Z",
+  "updatedAt" : "2026-04-13T05:55:41.989769300Z",
+  "history" : [ {
+    "role" : "user",
+    "content" : "���"
+  } ],
+  "distilledMemory" : "",
+  "memoryState" : {
+    "taskSummary" : "���",
+    "summaryMemory" : "",
+    "recentFiles" : [ ],
+    "recentToolResults" : [ ],
+    "extensions" : { }
+  },
+  "runtimeConfig" : {
+    "approvalPolicy" : "ask",
+    "maxSteps" : 8,
+    "maxNewTokens" : 1800,
+    "secretEnvNames" : [ "ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN", "GH_PAT", "GITHUB_PAT", "OPENAI_API_KEY", "OPENAI_API_TOKEN", "RIGHT_CODES_API_KEY" ],
+    "providerName" : "openai",
+    "modelName" : "gpt-5.4"
+  },
+  "latestRunId" : "run-20260413-055541-3328ed",
+  "recentRuns" : [ {
+    "runId" : "run-20260413-055541-3328ed",
+    "taskId" : "task-20260413-055541-d6a1af",
+    "startedAt" : "2026-04-13T05:55:41.207132300Z",
+    "endedAt" : "2026-04-13T05:55:41.969425900Z",
+    "status" : "failed",
+    "stopReason" : "error",
+    "finalAnswer" : "",
+    "error" : "IOException: OpenAI-compatible request failed: HTTP 429 body={\"error\":{\"code\":\"model_cooldown\",\"message\":\"All credentials for model gpt-5.4 are cooling down\",\"model\":\"gpt-5.4\",\"reset_seconds\":1011,\"reset_time\":\"16m50s\"}}"
+  } ]
+}
